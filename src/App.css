@@ -1,38 +1,72 @@
-.App {
+*{
+  margin: 0px;
+  background-origin: padding-box;
+ 
+}
+
+body
+{
+  background-color: #f1f1f1;
+}
+
+.column_style
+{
+  text-align:center;
+  
+}
+
+.zoom
+{
+  margin: 1px 5px 1px 5px;
+  transition-duration: 200ms;
+}
+
+@media only screen and (min-width: 1000px) {
+
+    .zoom:hover {
+      transform: scale(1.2); 
+      transition-duration: 200ms;
+    }
+}
+
+.navbar
+{
+  background-color: #221f25;
+}
+
+.nav_title
+{
+  border: 2px solid;
+  border-radius: 40px;
+  padding: 5px 50px 5px 50px;
+  margin: 2px 50px 2px 2px;
+  background-color: rgba(0, 0, 0, 0.637);
+  font-weight: bolder;
+}
+
+.nav_item
+{
+  font-size: 2vmin;
+  font-weight: bolder;
+}
+
+.card
+{
+  width: 100%;
+  margin-bottom: 40px;
+  border-radius: 50px;
+  
+}
+
+
+
+.card img
+{
+  border-radius: 50px;
+}
+
+.card a
+{
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

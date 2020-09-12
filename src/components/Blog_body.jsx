@@ -1,0 +1,43 @@
+import React from 'react'
+import APIblog from './API_viewblog'
+import Blog_create from './Blog_create'
+import Blog_create_form from './Blog_create_form'
+
+function Blog_body() {
+    return (
+        <div className="container">
+            <div className="row">
+
+                <div className="col col-xl-8 col-12 ">
+                    <APIblog />
+                </div>
+                <div className="col col-xl-4 col-12 ">
+                    <Blog_create />
+                    <div className="modal fade"  id="exampleModalCenter" tabIndex="-1" role="dialog"  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable"  role="document">
+                            <div className="modal-content" style={{borderRadius:"50px", padding:"40px"}}>
+                                <div className="modal-header">
+                                    <h3 className="modal-title" id="exampleModalLongTitle">Create New Blog</h3>
+                                    <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div className="modal-body" >
+                                    <Blog_create_form/>
+                                </div>
+                                <div className="modal-footer">
+                                    <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    )
+}
+
+export default Blog_body
