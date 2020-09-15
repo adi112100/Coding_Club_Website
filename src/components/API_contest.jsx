@@ -11,7 +11,7 @@ export class APIcontest extends Component {
   }
 
   componentDidMount() {
-    console.log("executed")
+    // console.log("executed")
 
     fetch("https://cors-anywhere.herokuapp.com/https://o1codingclub.herokuapp.com/contest/")
       .then(res => res.json())
@@ -39,14 +39,14 @@ export class APIcontest extends Component {
   render() {
     const { error, isLoaded, items } = this.state;
 
-    console.log(items)
+    // console.log(items)
     if (isLoaded && !error) {
       var newscard = items.map(item => (
 
         <div className="card mb-3 shadow" style={{ width: "100%" }} key={item.name}>
           <div className="row no-gutters">
             <div className="col-md-4">
-            <img src="https://source.unsplash.com/400x200/?coding,abstract,dark" className="card-img" alt=""></img>
+            <img src={`https://source.unsplash.com/400x200/?coding,programming,${item.name}`} className="card-img" alt=""></img>
             </div>
             <div className="col-md-8">
               <div className="card-body">
@@ -56,7 +56,7 @@ export class APIcontest extends Component {
                   <li className="list-group-item">endTime - {item.endTime}</li>
                   <li className="list-group-item">platform- {item.platform}</li>
                 </ul>
-                <a href={item.url} style={{ margin: "10px", textAlign: "center" }} class="btn btn-primary">Explore</a>
+                <a href={item.url} style={{ margin: "10px", textAlign: "center" }} className="btn btn-primary">Explore</a>
               </div>
             </div>
           </div>

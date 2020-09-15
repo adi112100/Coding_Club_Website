@@ -13,10 +13,10 @@ function Navbar(props) {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav nav_item">
-                        <a className="nav-item nav-link zoom" style={{color:"white"}} href="/">Home</a>
-                        <a className="nav-item nav-link zoom" style={{color:"white"}} href="/blogs/">Blogs</a>
-                        <a className="nav-item nav-link zoom" style={{color:"white"}} href="/placement/">Placement</a>
-                        <a className="nav-item nav-link zoom" style={{color:"white"}} href="/contest/">Online Contest</a>
+                        <a className="nav-item nav-link zoom" style={{color:props.color}} href="/"><i className="fas fa-home"></i>  Home</a>
+                        <a className="nav-item nav-link zoom" style={{color:props.color}} href="/blogs/"><i className="fas fa-blog"></i>  Blogs</a>
+                        <a className="nav-item nav-link zoom" style={{color:props.color}} href="/placement/"><i className="fas fa-briefcase"></i>  Placement</a>
+                        <a className="nav-item nav-link zoom" style={{color:props.color}} href="/contest/"><i className="fas fa-code"></i>  Online Contest</a>
                     </div>
                 </div>
             </nav>

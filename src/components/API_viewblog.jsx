@@ -38,7 +38,7 @@ export class APIblog extends Component {
   render() {
     const { error, isLoaded, items } = this.state;
     
-    console.log(items)
+    // console.log(items)
     if (isLoaded && !error) {
       var newscard = items.map(item => (
 
