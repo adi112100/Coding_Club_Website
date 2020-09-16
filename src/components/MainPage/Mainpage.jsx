@@ -40,13 +40,13 @@ function Mainpage() {
                 </div>
             </div>
             <div className="position-absolute icons">
-                <span><i class="fab fa-facebook"></i></span>
-                <span><i class="fab fa-linkedin-in"></i></span>
-                <span><i class="fab fa-github"></i></span>
-                <span><i class="fab fa-twitter"></i></span>
+                <a href="" target="_blank" className="icon_a"><i class="fab fa-facebook"></i></a>
+                <a href="" target="_blank" className="icon_a"><i class="fab fa-linkedin-in"></i></a>
+                <a href="" target="_blank" className="icon_a"><i class="fab fa-github"></i></a>
+                <a href="" target="_blank" className="icon_a"><i class="fab fa-twitter"></i></a>
 
             </div>
-            
+
         </>
     )
 }
