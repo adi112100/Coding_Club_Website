@@ -4,7 +4,7 @@ import React from 'react';
 function Navbar(props) {
 
     return (
-        <div className="fixed-top">
+        <div className={props.position}>
             <nav className="navbar navbar-expand-lg navbar-dark">
                 <a className="navbar-brand nav_title" href="/">O(1)  Club</a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse"

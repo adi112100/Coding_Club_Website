@@ -40,10 +40,10 @@ function Mainpage() {
                 </div>
             </div>
             <div className="position-absolute icons">
-                <a href="" target="_blank" className="icon_a"><i class="fab fa-facebook"></i></a>
-                <a href="" target="_blank" className="icon_a"><i class="fab fa-linkedin-in"></i></a>
-                <a href="" target="_blank" className="icon_a"><i class="fab fa-github"></i></a>
-                <a href="" target="_blank" className="icon_a"><i class="fab fa-twitter"></i></a>
+                <a href="" target="_blank" className="icon_a"><i className="fab fa-facebook"></i></a>
+                <a href="" target="_blank" className="icon_a"><i className="fab fa-linkedin-in"></i></a>
+                <a href="" target="_blank" className="icon_a"><i className="fab fa-github"></i></a>
+                <a href="" target="_blank" className="icon_a"><i className="fab fa-twitter"></i></a>
 
             </div>
 

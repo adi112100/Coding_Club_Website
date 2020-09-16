@@ -9,13 +9,14 @@ import Mainpage from './components/MainPage/Mainpage';
 import Main_Swiper from './components/MainPage/Main_swiper';
 
 function App() {
+
   return (
     <div className="App">
       <Router>
-        
+
         <Switch>
           <Route path="/blogs">
-            <Navbar color="#242424"/>
+            <Navbar color="#242424" position="" />
             <br />
             <br />
             <br />
@@ -23,7 +24,7 @@ function App() {
           </Route>
 
           <Route path="/contest">
-            <Navbar color="#242424"/>
+            <Navbar color="#242424" position="" />
             <br />
             <br />
             <br />
@@ -31,7 +32,7 @@ function App() {
           </Route>
 
           <Route path="/placement">
-            <Navbar color="#242424"/>
+            <Navbar color="#242424" position="" />
             <br />
             <br />
             <br />
@@ -39,14 +40,17 @@ function App() {
           </Route>
 
           <Route path="/info">
-            <Navbar color="#242424"/>
+            <Navbar color="#242424" position="fixed-top" />
             <Main_Swiper />
           </Route>
 
+
           <Route path="/">
-            <Navbar color="#efefef"/>
+            <Navbar color="#efefef" position="fixed-top" />
             <Mainpage />
           </Route>
+
+          
 
         </Switch>
 

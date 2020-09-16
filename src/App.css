@@ -151,6 +151,16 @@ body
   {
     width: 100%;
   }
+
+  .condition1
+  {
+    display: none;
+  }
+
+  .condition2
+  {
+    display: block;
+  }
   
 
 @media only screen and (min-width: 1000px) {
@@ -224,6 +234,7 @@ body
     border-radius: 50px;
   }
 
+
   
 
 
@@ -269,6 +280,8 @@ body
     width: 100vw;
     object-fit: cover;
     border-radius: 50px;
+
+   
   }
   
 

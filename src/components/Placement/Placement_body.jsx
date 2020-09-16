@@ -18,7 +18,7 @@ function Blog_body() {
                 <div className="col col-xl-4 col-12 " id="createblog">
                     <Placement_create />
                     <div className="modal fade"  id="exampleModalCenter" tabIndex="-1" role="dialog"  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                        <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable"  role="document">
+                        <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg"  role="document">
                             <div className="modal-content" style={{borderRadius:"50px", padding:"40px"}}>
                                 <div className="modal-header">
                                     <h3 className="modal-title" id="exampleModalLongTitle">Share Your Placement Experience</h3>
