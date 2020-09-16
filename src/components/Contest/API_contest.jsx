@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import loading from '../../media/loading.gif'
 
 export class APIcontest extends Component {
   constructor(props) {
@@ -65,11 +66,14 @@ export class APIcontest extends Component {
       ))
     }
 
-    return (
+    return isLoaded ?
       <div>
         {newscard}
       </div>
-    )
+      : 
+      <div className="loading_contest">
+        <img className="shadow" src={loading} alt="" />
+      </div>
   }
 }
 

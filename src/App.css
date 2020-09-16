@@ -140,6 +140,20 @@ body
     
   }
 
+  .loading img
+  {
+    padding: 10px;
+    border-radius: 50px;
+    width: 100%;
+    
+  }
+
+  .loading_contest
+  {
+    width: 100%;
+  }
+  
+
 @media only screen and (min-width: 1000px) {
 
   .zoom:hover {
@@ -186,6 +200,15 @@ body
     transition-duration: 200ms;
   }
 
+  .loading_contest img
+  {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    border-radius: 50px;
+  }
+
   
 
 
@@ -222,6 +245,15 @@ body
     background-color: white;
     color: rgb(41, 41, 41);
     border-radius: 100%;
+    object-fit: cover;
+  }
+
+  .loading_contest img
+  {
+    height: 90vh;
+    width: 100vw;
+    object-fit: cover;
+    border-radius: 50px;
   }
   
 

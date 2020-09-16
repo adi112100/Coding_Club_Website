@@ -8,7 +8,7 @@ function Blog_body() {
     return (
         <div className="container">
             <div className="row">
-            <AnchorLink className="btn btn-dark btn-lg btn-round " href="#createblog" role="button" style={{margin:"10px", borderRadius:"50px"}}>CreateBlog</AnchorLink>
+            <AnchorLink className="btn btn-dark btn-lg btn-round " href="#createblog" role="button" style={{margin:"10px", borderRadius:"50px"}}>Share Your Experience</AnchorLink>
             </div>
             <div className="row">
 
@@ -21,7 +21,7 @@ function Blog_body() {
                         <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable"  role="document">
                             <div className="modal-content" style={{borderRadius:"50px", padding:"40px"}}>
                                 <div className="modal-header">
-                                    <h3 className="modal-title" id="exampleModalLongTitle">Create New Blog</h3>
+                                    <h3 className="modal-title" id="exampleModalLongTitle">Share Your Placement Experience</h3>
                                     <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>

@@ -6,7 +6,7 @@ function Contest_page() {
 
         <div className="containerfluid">
             <div className="row">
-                <div className="col col-xl-12 col-12 ">
+                <div className="col-xl-12 col-12 ">
                     <APIcontest/>
                 </div>
             </div>

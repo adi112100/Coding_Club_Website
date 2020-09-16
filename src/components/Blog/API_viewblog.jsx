@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import loading from '../../media/loading.gif'
 
 export class APIblog extends Component {
   constructor(props) {
@@ -37,7 +38,7 @@ export class APIblog extends Component {
 
   render() {
     const { error, isLoaded, items } = this.state;
-    
+
     // console.log(items)
     if (isLoaded && !error) {
       var newscard = items.map(item => (
@@ -58,11 +59,14 @@ export class APIblog extends Component {
       ))
     }
 
-    return (
+    return isLoaded ?
       <div>
         {newscard}
       </div>
-    )
+      : 
+      <div className="loading">
+        <img className="shadow" src={loading} alt="" />
+      </div>
   }
 }
 

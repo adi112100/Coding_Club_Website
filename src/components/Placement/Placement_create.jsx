@@ -6,8 +6,8 @@ function Placement_create() {
             <div className="card shadow-lg text-center" style={{width:"100%", top:"100px"}}>
                 <img src={create_img} className="card-img-top" alt=""></img>
                 <div className="card-body">
-                    <h1 className="card-title">CREATE NEW BLOG</h1>
-                    <p className="card-text" style={{ fontSize: 20 }}>Hey there!! Want to post your blog please click here, and it will redirect you to form!!</p>
+                    <h2 className="card-title" style={{width:"100%"}}>SHARE YOUR PLACEMENT EXPERIENCE</h2>
+                    <p className="card-text" style={{ fontSize: 20 }}>Hey there!! Want to share your placement experience!! please click here, and it will redirect you to form!!</p>
                     <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
                         CLICK HERE
                     </button>

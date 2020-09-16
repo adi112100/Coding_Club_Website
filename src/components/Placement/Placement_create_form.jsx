@@ -28,11 +28,11 @@ function Placement_create_form() {
                     <small id="emailHelp" className="form-text text-muted">Please check your email.</small>
                 </div>
                 <div className="form-group">
-                    <label htmlFor="title">Blog Title</label>
+                    <label htmlFor="title">Title</label>
                     <input type="text" className="form-control" id="title"/>
                 </div>
                 <div className="form-group">
-                    <label htmlFor="title">Blog Body</label>
+                    <label htmlFor="title">Placement Experience Body</label>
                     <textarea type="text" className="form-control" id="title" rows="10" placeholder="Write here......" />
                 </div>
                 <button type="submit" className="btn btn-primary">Submit</button>
