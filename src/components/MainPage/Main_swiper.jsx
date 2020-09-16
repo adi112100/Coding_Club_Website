@@ -2,7 +2,7 @@ import React from 'react';
 import Swiper from 'react-id-swiper';
 import 'swiper/swiper.scss'
 import Aboutus from './Aboutus';
-import swiper from '../media/swiper.gif'
+import swiper from '../../media/swiper.gif'
 import Contact from './Contact';
 import Insight from './Insight';
 

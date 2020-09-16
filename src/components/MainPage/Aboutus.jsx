@@ -1,5 +1,5 @@
 import React from 'react'
-import rcoem from '../media/rcoem.jpg'
+import rcoem from '../../media/rcoem.jpg'
 function Aboutus() {
     return (
         <>

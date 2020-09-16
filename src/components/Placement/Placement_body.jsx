@@ -1,18 +1,22 @@
 import React from 'react'
-import APIblog from './API_viewblog'
-import Blog_create from './Blog_create'
-import Blog_create_form from './Blog_create_form'
+import APIblog from './API_viewplacement'
+import Placement_create from './Placement_create'
+import Placement_create_form from './Placement_create_form'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 function Blog_body() {
     return (
         <div className="container">
             <div className="row">
+            <AnchorLink className="btn btn-dark btn-lg btn-round " href="#createblog" role="button" style={{margin:"10px", borderRadius:"50px"}}>CreateBlog</AnchorLink>
+            </div>
+            <div className="row">
 
                 <div className="col col-xl-8 col-12 ">
                     <APIblog />
                 </div>
-                <div className="col col-xl-4 col-12 ">
-                    <Blog_create />
+                <div className="col col-xl-4 col-12 " id="createblog">
+                    <Placement_create />
                     <div className="modal fade"  id="exampleModalCenter" tabIndex="-1" role="dialog"  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                         <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable"  role="document">
                             <div className="modal-content" style={{borderRadius:"50px", padding:"40px"}}>
@@ -23,7 +27,7 @@ function Blog_body() {
                                     </button>
                                 </div>
                                 <div className="modal-body" >
-                                    <Blog_create_form/>
+                                    <Placement_create_form/>
                                 </div>
                                 <div className="modal-footer">
                                     <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>

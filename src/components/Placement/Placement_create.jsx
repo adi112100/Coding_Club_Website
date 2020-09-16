@@ -1,6 +1,6 @@
 import React from 'react'
-import create_img from '../media/create_img.jpg'
-function Blog_create() {
+import create_img from '../../media/create_img.jpg'
+function Placement_create() {
     return (
         <div className="sticky-top">
             <div className="card shadow-lg text-center" style={{width:"100%", top:"100px"}}>
@@ -20,4 +20,4 @@ function Blog_create() {
     )
 }
 
-export default Blog_create
+export default Placement_create

@@ -1,11 +1,12 @@
 import React from 'react';
 import './App.css';
-import Navbar from './components/nav.jsx';
-import Blog_body from './components/Blog_body';
+import Navbar from './components/NavBar/nav.jsx';
+import Blog_body from './components/Blog/Blog_body';
+import Placement_body from './components/Placement/Placement_body';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Contest_page from './components/Contest_page';
-import Mainpage from './components/Mainpage';
-import Main_Swiper from './components/Main_swiper';
+import Contest_page from './components/Contest/Contest_page';
+import Mainpage from './components/MainPage/Mainpage';
+import Main_Swiper from './components/MainPage/Main_swiper';
 
 function App() {
   return (
@@ -34,7 +35,7 @@ function App() {
             <br />
             <br />
             <br />
-            <h1>This is placement page</h1>
+            <Placement_body />
           </Route>
 
           <Route path="/info">

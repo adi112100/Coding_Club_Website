@@ -100,6 +100,46 @@ body
     object-fit: cover;
   }
 
+  .main_swiper
+  {
+    padding: 10px;
+    width: 100%;
+    position: absolute;
+    top: 10vh;
+    text-align: center;
+    z-index: 10;
+  
+    
+  }
+  
+  
+  
+  .jumbotron
+  {
+    min-height: 85vh;
+    border-radius: 40px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(214, 214, 214);
+  }
+
+  .icons
+  {
+    top: 80px;
+    right: 0px;
+    z-index: 100;
+  }
+
+  .icons span
+  {
+    margin: 10px;
+    padding: 8px 12px 8px 12px;
+    font-size: 25px;
+    background-color: white;
+    color: rgb(41, 41, 41);
+    border-radius: 100%;
+    
+  }
+
 @media only screen and (min-width: 1000px) {
 
   .zoom:hover {
@@ -141,6 +181,13 @@ body
     width: 10%;
   }
 
+  .icons span:hover {
+    transform: scale(1.2); 
+    transition-duration: 200ms;
+  }
+
+  
+
 
  
 }
@@ -167,30 +214,18 @@ body
     width: 30%;
   }
   
+  .icons span
+  {
+    margin: 7px;
+    padding: 4px 6px 4px 6px;
+    font-size: 13px;
+    background-color: white;
+    color: rgb(41, 41, 41);
+    border-radius: 100%;
+  }
   
 
 }
 
-.main_swiper
-{
-  padding: 10px;
-  width: 100%;
-  position: absolute;
-  top: 10vh;
-  text-align: center;
-  z-index: 10;
-
-  
-}
-
-
-
-.jumbotron
-{
-  min-height: 85vh;
-  border-radius: 40px;
-  background-color: rgb(255, 255, 255);
-  border: 1px solid rgb(214, 214, 214);
-}
 
 

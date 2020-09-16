@@ -1,5 +1,5 @@
 import React from 'react'
-import path1 from '../media/path1.png'
+
 function Insight() {
     return (
         <>

@@ -1,7 +1,7 @@
 import React from 'react'
-import aa from '../media/aa.jpg'
-import bb from '../media/bb.jpg'
-import cc from '../media/cc.jpg'
+import aa from '../../media/aa.jpg'
+import bb from '../../media/bb.jpg'
+import cc from '../../media/cc.jpg'
 
 function Mainpage() {
     return (
@@ -38,6 +38,13 @@ function Mainpage() {
                         <div><h5>Explore</h5></div>
                     </div>
                 </div>
+            </div>
+            <div className="position-absolute icons">
+                <span><i class="fab fa-facebook"></i></span>
+                <span><i class="fab fa-linkedin-in"></i></span>
+                <span><i class="fab fa-github"></i></span>
+                <span><i class="fab fa-twitter"></i></span>
+
             </div>
             
         </>
