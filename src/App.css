@@ -190,8 +190,26 @@ body
 
   .main_btn
   {
-    font-size: 50px;
+    font-size: 70px;
     padding: 30px 50px 30px 50px;
+    transition-duration: 200ms;
+  }
+
+  .main_btn1
+  {
+    border-radius: 100%;
+    font-size: 60px;
+    padding: 10px 25px 10px 25px;
+    transition-duration: 200ms;
+  }
+
+  
+  
+  .main_btn1:hover
+  {
+    
+    background-color: #1d1d1d;
+    color: #db9731;
     transition-duration: 200ms;
   }
 
@@ -282,6 +300,11 @@ body
     border-radius: 50px;
 
    
+  }
+
+  .main_btn1
+  {
+    display: none;
   }
   
 

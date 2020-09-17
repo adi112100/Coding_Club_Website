@@ -6,7 +6,7 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 function Blog_body() {
     return (
-        <div className="container">
+        <div className="container" id="placement_body">
             <div className="row">
             <AnchorLink className="btn btn-dark btn-lg btn-round " href="#createblog" role="button" style={{margin:"10px", borderRadius:"50px"}}>Share Your Experience</AnchorLink>
             </div>

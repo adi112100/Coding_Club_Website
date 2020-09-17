@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Contest_page from './components/Contest/Contest_page';
 import Mainpage from './components/MainPage/Mainpage';
 import Main_Swiper from './components/MainPage/Main_swiper';
+import GotoTop from './components/goUp/GotoTop';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
             <br />
             <br />
             <Blog_body />
+            <GotoTop idd="blog_body"/>
           </Route>
 
           <Route path="/contest">
@@ -29,6 +31,7 @@ function App() {
             <br />
             <br />
             <Contest_page />
+            <GotoTop idd="contest_body" />
           </Route>
 
           <Route path="/placement">
@@ -37,6 +40,7 @@ function App() {
             <br />
             <br />
             <Placement_body />
+            <GotoTop idd="placement_body" />
           </Route>
 
           <Route path="/info">

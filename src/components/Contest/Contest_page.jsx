@@ -4,7 +4,7 @@ import APIcontest from './API_contest'
 function Contest_page() {
     return (
 
-        <div className="containerfluid">
+        <div className="containerfluid" id="contest_body">
             <div className="row">
                 <div className="col-xl-12 col-12 ">
                     <APIcontest/>
