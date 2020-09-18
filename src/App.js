@@ -8,6 +8,7 @@ import Contest_page from './components/Contest/Contest_page';
 import Mainpage from './components/MainPage/Mainpage';
 import Main_Swiper from './components/MainPage/Main_swiper';
 import GotoTop from './components/goUp/GotoTop';
+import Admin from './components/Admin/Admin';
 
 function App() {
 
@@ -47,7 +48,15 @@ function App() {
             <Navbar color="#242424" position="fixed-top" />
             <Main_Swiper />
           </Route>
-
+          
+          <Route path="/admin">
+            <Navbar color="#242424" position="" />
+            <br />
+            <br />
+            <br />
+            <Admin />
+            <GotoTop idd="admin_body" />
+          </Route>
 
           <Route path="/">
             <Navbar color="#efefef" position="fixed-top" />

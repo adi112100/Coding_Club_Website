@@ -161,6 +161,14 @@ body
   {
     display: block;
   }
+
+  .admin_icon
+  {
+    border-radius: 100%;
+    padding: 20px 20px 20px 20px;
+    background-color: white;
+    
+  }
   
 
 @media only screen and (min-width: 1000px) {
@@ -302,9 +310,23 @@ body
    
   }
 
+  .main_btn
+  {
+    font-size: 50px;
+    padding: 1px 20px 1px 20px ;
+    margin: 10px;
+  }
+
   .main_btn1
   {
     display: none;
+  }
+
+  .admin_icon
+  {
+    border-radius: 100%;
+    padding: 10px 10px 10px 10px;
+    background-color: white;
   }
   
 
