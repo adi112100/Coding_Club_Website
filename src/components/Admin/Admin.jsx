@@ -6,6 +6,7 @@ function Admin() {
     const [key, setKey] = useState('');
     const [blog, setBlog] = useState([]);
     const [placement, setPlacement] = useState([]);
+    const [htmlbody, setBody] = useState('');
     const [message, fetchMessage] = useState({ message: "", status: "none" });
     const [callbacks, fetchCallbacks] = useState({ message: "", status: "none" });
 
@@ -45,6 +46,22 @@ function Admin() {
             });
 
 
+
+    }
+
+    const sendmail = (e) => {
+        e.preventDefault()
+        Axios.post("https://o1codingclub.herokuapp.com/mail/", { HTML: htmlbody, key: key }).
+            then((response) => {
+
+                fetchCallbacks({ ...callbacks, message: response.data, status: "DONE" })
+               
+
+            }).
+            catch(function (error) {
+
+                fetchCallbacks({ ...callbacks, message: "Unexpected Error occur!!", status: "INVALID" })
+            });
 
     }
 
@@ -198,6 +215,31 @@ function Admin() {
 
                     <div className="container shadow" style={{ borderRadius: "50px", backgroundColor: "white" }}>
                         <div className="row p-3">
+                            <div className="col-3 col-xl-5"></div>
+                            <div className="col-6 col-xl-2" style={{ display: "block", margin: "auto" }}>
+                                <button type="button" className="btn btn-lg btn-dark" data-toggle="modal" data-target="#sendmail">
+                                    <i className="fas fa-mail-bulk"></i>  Mail All
+                                </button>
+                            </div>
+                            <div className="col-3 col-xl-5"></div>
+
+
+
+                        </div>
+                    </div>
+
+
+
+                </>
+            }
+            <br />
+            <br />
+            {
+                message.status === 'DONE' || message.status === 'SIGNED IN' &&
+                <>
+
+                    <div className="container shadow" style={{ borderRadius: "50px", backgroundColor: "white" }}>
+                        <div className="row p-3">
                             <div className="col-xl-6 col-12">< AdminView data={blog} type="BLOGS" keys={key} callbackk={updateadmin} /></div>
                             <div className="col-xl-6 col-12"><AdminView data={placement} type="PLACEMENT" keys={key} callbackk={updateadmin} /></div>
                         </div>
@@ -205,6 +247,38 @@ function Admin() {
 
                 </>
             }
+            <div className="modal fade" id="sendmail" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal-dialog modal-dialog-centered modal-lg">
+                    <div className="modal-content" style={{ borderRadius: "50px", padding: "40px" }}>
+                        <div className="modal-header">
+                            <h5 className="modal-title" id="exampleModalLabel">Message (HTML format)</h5>
+                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div className="modal-body">
+                            <div className={`shadow sticky-top alert alert-${callbacks.status === 'VALID' || callbacks.status === 'DONE' ? 'success' : 'warning'}  fade show ${callbacks.status === 'none' ? 'condition1' : 'condition2'}`}
+                                role="alert" style={{ borderRadius: "50px" }}>
+                                <strong>{callbacks.status}</strong> {callbacks.message}
+
+                            </div>
+                            <form onSubmit={sendmail}>
+                                <div className="form-group">
+                                    <label htmlFor="title">message in html format</label>
+                                    <textarea type="text" className="form-control" id="title" rows="15" placeholder="Write here......"
+                                        value={htmlbody}
+                                        onChange={(e) => setBody(e.target.value)} />
+                                </div>
+                                <button type="submit" className="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+                        <div className="modal-footer">
+                            <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </>
     )
 }

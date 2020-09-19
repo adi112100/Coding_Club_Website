@@ -30,7 +30,7 @@ function Mainpage() {
             <div className="position-absolute heading">
                 <div className="card shadow heading_card">
                     <div className="card-body">
-                        <h1>Hey Welcome TO O(1) Coding Club !!!</h1>
+                        <h1>Hey There, Welcome TO O(1) Coding Club !!!</h1>
                         <a href="/info/" className="btn btn-light main_btn">
                             <i className="fas fa-mouse"></i>
                         </a>
