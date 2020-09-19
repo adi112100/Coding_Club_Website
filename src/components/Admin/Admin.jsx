@@ -7,6 +7,7 @@ function Admin() {
     const [blog, setBlog] = useState([]);
     const [placement, setPlacement] = useState([]);
     const [message, fetchMessage] = useState({ message: "", status: "none" });
+    const [callbacks, fetchCallbacks] = useState({ message: "", status: "none" });
 
 
     const submithandler = (e) => {
@@ -22,9 +23,11 @@ function Admin() {
                 Axios.post("https://o1codingclub.herokuapp.com/placement/", { key: key }).
                     then((response) => {
 
-                        fetchMessage({ ...message, message: "Successfully Signed in", status: "VALID" })
+                        fetchMessage({ ...message, message: "Successfully Signed in as an Admin", status: "DONE" })
                         setPlacement(response.data)
-                        setTimeout(() => { fetchMessage({ ...message, message: "Successfully Signed in", status: "DONE" }) }, 1000)
+                        console.log("signed inn")
+                        setTimeout(() => { fetchMessage({ ...message, message: "Successfully Signed in as an Admin", status: "SIGNED IN" }) }, 2000)
+
                     }).
                     catch(function (error) {
 
@@ -45,30 +48,100 @@ function Admin() {
 
     }
 
-    const updateadmin = () => {
-        console.log("executed")
-        //     Axios.post("https://o1codingclub.herokuapp.com/blog/", { key: key }).
-        //     then((response) => {
+    function updateblog() {
+        Axios.post("https://o1codingclub.herokuapp.com/blog/", { key: key }).
+            then((response) => {
 
-        //         fetchMessage({ ...message, message: "Successfully Signed in", status: "VALID" })
-        //         setBlog(response.data)
 
-        //     }).
-        //     catch(function (error) {
+                setBlog(response.data)
 
-        //         fetchMessage({ ...message, message: error.response.data, status: "INVALID" })
-        //     });
+            })
+        console.log("blog updated", message.message)
+    }
 
-        // Axios.post("https://o1codingclub.herokuapp.com/placement/", { key: key }).
-        //     then((response) => {
+    function updateplacement() {
 
-        //         fetchMessage({ ...message, message: "Successfully Signed in", status: "VALID" })
-        //         setPlacement(response.data)
-        //     }).
-        //     catch(function (error) {
+        Axios.post("https://o1codingclub.herokuapp.com/placement/", { key: key }).
+            then((response) => {
 
-        //         fetchMessage({ ...message, message: error.response.data, status: "INVALID" })
-        //     });
+
+                setPlacement(response.data)
+            })
+
+        console.log("placement updated", message.message)
+    }
+
+    function deleteitem(id, type) {
+        if (type === "BLOGS") {
+            alert("Do you want to delete this Blog!!")
+            Axios.post(`https://o1codingclub.herokuapp.com/blog/delete/${id}`, { key: key }).
+                then((response) => {
+                    fetchCallbacks({ ...callbacks, message: response.data, status: "DONE" });
+                    updateblog()
+
+                }).
+                catch(function (error) {
+
+                    console.log(error)
+                    fetchCallbacks({ ...callbacks, message: error.response.data, status: "INVALID" })
+                });
+
+
+
+        }
+        else {
+            alert("Do you want to delete this Placement Blog!!")
+            Axios.post(`https://o1codingclub.herokuapp.com/placement/delete/${id}`, { key: key }).
+                then((response) => {
+                    fetchCallbacks({ ...callbacks, message: response.data, status: "DONE" })
+                    updateplacement()
+                }).
+                catch(function (error) {
+
+                    console.log(error)
+                    fetchCallbacks({ ...callbacks, message: error.response.data, status: "INVALID" })
+                });
+
+        }
+    }
+
+    function approveitem(id, type) {
+        if (type === "BLOGS") {
+            alert("Do you want to approve this Blog!!")
+            Axios.post(`https://o1codingclub.herokuapp.com/blog/approve/${id}`, { key: key }).
+                then((response) => {
+                    fetchCallbacks({ ...callbacks, message: response.data, status: "DONE" })
+                    updateblog()
+                }).
+                catch(function (error) {
+
+                    fetchCallbacks({ ...callbacks, message: error.response.data, status: "INVALID" })
+                });
+
+        }
+        else {
+            alert("Do you want to approve this Placement Blog!!")
+            Axios.post(`https://o1codingclub.herokuapp.com/placement/approve/${id}`, { key: key }).
+                then((response) => {
+                    fetchCallbacks({ ...callbacks, message: response.data, status: "DONE" })
+                    updateplacement()
+                }).
+                catch(function (error) {
+
+                    fetchCallbacks({ ...callbacks, message: error.response.data, status: "INVALID" })
+                });
+
+        }
+    }
+
+    const updateadmin = (id, type, operation) => {
+
+        if (operation === 'approve') {
+            approveitem(id, type)
+        }
+        else {
+            deleteitem(id, type)
+        }
 
     }
 
@@ -78,12 +151,17 @@ function Admin() {
 
     return (
         <>
-            <div className={`shadow sticky-top alert alert-${message.status === 'VALID' ? 'success' : 'warning'}  fade show ${message.status === 'none' || message.status === 'DONE' ? 'condition1' : 'condition2'}`}
+            <div className={`shadow sticky-top alert alert-${message.status === 'VALID' || message.status === 'DONE' ? 'success' : 'warning'}  fade show ${message.status === 'none' || message.status === 'SIGNED IN' ? 'condition1' : 'condition2'}`}
                 role="alert" style={{ borderRadius: "50px" }}>
                 <strong>{message.status}</strong> {message.message}
 
             </div>
-            <div className="container shadow" id="admin_body" style={{ borderRadius: "50px" }}>
+            <div className={`shadow sticky-top alert alert-${callbacks.status === 'VALID' || callbacks.status === 'DONE' ? 'success' : 'warning'}  fade show ${callbacks.status === 'none' ? 'condition1' : 'condition2'}`}
+                role="alert" style={{ borderRadius: "50px" }}>
+                <strong>{callbacks.status}</strong> {callbacks.message}
+
+            </div>
+            <div className="container shadow" id="admin_body" style={{ borderRadius: "50px", backgroundColor: "white" }}>
                 <div className="row p-3">
                     <form className="col-12 col-xl-12" onSubmit={submithandler}>
                         <div className="form-group">
@@ -105,18 +183,20 @@ function Admin() {
 
                     <div className="container shadow" style={{ borderRadius: "50px" }}>
                         <div className="row p-3">
-                            <div className="col-12 loading"><img src={loading} alt="" style={{borderRadius:"50px"}}/></div>
+                            <div className="col-12 loading"><img src={loading} alt="" style={{ borderRadius: "50px" }} /></div>
                         </div>
                     </div>
 
                 </>
 
             }
+            <br />
+            <br />
             {
-                message.status === 'DONE' &&
+                message.status === 'DONE' || message.status === 'SIGNED IN' &&
                 <>
 
-                    <div className="container shadow" style={{ borderRadius: "50px" }}>
+                    <div className="container shadow" style={{ borderRadius: "50px", backgroundColor: "white" }}>
                         <div className="row p-3">
                             <div className="col-xl-6 col-12">< AdminView data={blog} type="BLOGS" keys={key} callbackk={updateadmin} /></div>
                             <div className="col-xl-6 col-12"><AdminView data={placement} type="PLACEMENT" keys={key} callbackk={updateadmin} /></div>

@@ -2,70 +2,70 @@ import React, { useState } from 'react'
 import Axios from "axios"
 function AdminView(props) {
 
-    const [message, fetchMessage] = useState({ message: "", status: "none" });
-    
-    function deletee(id) {
-        if (props.type === "BLOGS") {
-            alert("Do you want to delete this Blog!!")
-            Axios.post(`https://o1codingclub.herokuapp.com/blog/delete/${id}`, { key: props.keys }).
-                then((response) => {
-                    fetchMessage({ ...message, message: response.data, status: "VALID" });
-                    
-                }).
-                catch(function (error) {
+    // const [message, fetchMessage] = useState({ message: "", status: "none" });
 
-                    console.log(error)
-                    fetchMessage({ ...message, message: error.response.data, status: "INVALID" })
-                });
+    // function deletee(id) {
+    //     if (props.type === "BLOGS") {
+    //         alert("Do you want to delete this Blog!!")
+    //         Axios.post(`https://o1codingclub.herokuapp.com/blog/delete/${id}`, { key: props.keys }).
+    //             then((response) => {
+    //                 fetchMessage({ ...message, message: response.data, status: "VALID" });
 
-                
+    //             }).
+    //             catch(function (error) {
 
-        }
-        else {
-            alert("Do you want to delete this Placement Blog!!")
-            Axios.post(`https://o1codingclub.herokuapp.com/placement/delete/${id}`, { key: props.keys }).
-                then((response) => {
-                    fetchMessage({ ...message, message: response.data, status: "VALID" })
-                    // props.callback()
-                }).
-                catch(function (error) {
-
-                    console.log(error)
-                    fetchMessage({ ...message, message: error.response.data, status: "INVALID" })
-                });
-
-        }
-    }
-
-    function approvee(id) {
-        if (props.type === "BLOGS") {
-            alert("Do you want to approve this Blog!!")
-            Axios.post(`https://o1codingclub.herokuapp.com/blog/approve/${id}`, { key: props.keys }).
-                then((response) => {
-                    fetchMessage({ ...message, message: response.data, status: "VALID" })
-                }).
-                catch(function (error) {
-
-                    fetchMessage({ ...message, message: error.response.data, status: "INVALID" })
-                });
-
-        }
-        else {
-            alert("Do you want to approve this Placement Blog!!")
-            Axios.post(`https://o1codingclub.herokuapp.com/placement/approve/${id}`, { key: props.keys }).
-                then((response) => {
-                    fetchMessage({ ...message, message: response.data, status: "VALID" })
-                }).
-                catch(function (error) {
-
-                    fetchMessage({ ...message, message: error.response.data, status: "INVALID" })
-                });
-
-        }
-    }
+    //                 console.log(error)
+    //                 fetchMessage({ ...message, message: error.response.data, status: "INVALID" })
+    //             });
 
 
-    
+
+    //     }
+    //     else {
+    //         alert("Do you want to delete this Placement Blog!!")
+    //         Axios.post(`https://o1codingclub.herokuapp.com/placement/delete/${id}`, { key: props.keys }).
+    //             then((response) => {
+    //                 fetchMessage({ ...message, message: response.data, status: "VALID" })
+    //                 // props.callback()
+    //             }).
+    //             catch(function (error) {
+
+    //                 console.log(error)
+    //                 fetchMessage({ ...message, message: error.response.data, status: "INVALID" })
+    //             });
+
+    //     }
+    // }
+
+    // function approvee(id) {
+    //     if (props.type === "BLOGS") {
+    //         alert("Do you want to approve this Blog!!")
+    //         Axios.post(`https://o1codingclub.herokuapp.com/blog/approve/${id}`, { key: props.keys }).
+    //             then((response) => {
+    //                 fetchMessage({ ...message, message: response.data, status: "VALID" })
+    //             }).
+    //             catch(function (error) {
+
+    //                 fetchMessage({ ...message, message: error.response.data, status: "INVALID" })
+    //             });
+
+    //     }
+    //     else {
+    //         alert("Do you want to approve this Placement Blog!!")
+    //         Axios.post(`https://o1codingclub.herokuapp.com/placement/approve/${id}`, { key: props.keys }).
+    //             then((response) => {
+    //                 fetchMessage({ ...message, message: response.data, status: "VALID" })
+    //             }).
+    //             catch(function (error) {
+
+    //                 fetchMessage({ ...message, message: error.response.data, status: "INVALID" })
+    //             });
+
+    //     }
+    // }
+
+
+
 
 
 
@@ -86,29 +86,24 @@ function AdminView(props) {
                     {
                         item.status === 0 &&
                         <>
-                            <span style={{ display: "inline", margin: "5px" }}><button type="button" className="btn btn-success" onClick={() => approvee(item.id)}>Approve</button></span>
-                            <span style={{ display: "inline", margin: "5px" }}><button type="button" className="btn btn-danger" onClick={() => deletee(item.id)}>Delete</button></span>
+                            <span style={{ display: "inline", margin: "5px" }}><button type="button" className="btn btn-success" onClick={() => props.callbackk(item.id, props.type, 'approve')}>Approve</button></span>
+                            <span style={{ display: "inline", margin: "5px" }}><button type="button" className="btn btn-danger" onClick={() => props.callbackk(item.id, props.type, 'delete')}>Delete</button></span>
                         </>
                     }
                     {
                         item.status === 1 &&
-                        <span style={{ display: "inline", margin: "5px" }}><button type="button" className="btn btn-danger" onClick={() => deletee(item.id)}>Delete</button></span>
+                        <span style={{ display: "inline", margin: "5px" }}><button type="button" className="btn btn-danger" onClick={() => props.callbackk(item.id, props.type, 'delete')}>Delete</button></span>
                     }
                 </div>
             </div>
 
         ))
 
-       
+
 
     return (
         <div>
-            <div className={`shadow sticky-top alert alert-${message.status === 'VALID' ? 'success' : 'warning'}  fade show ${message.status === 'none' ? 'condition1' : 'condition2'}`}
-                role="alert" style={{ borderRadius: "50px" }}>
-                <strong>{message.status}</strong> {message.message}
 
-            </div>
-            
             <h3 style={{ display: "block", textAlign: "center", margin: "20px" }}>{props.type}</h3>
             {list}
         </div>
