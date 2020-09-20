@@ -47,7 +47,7 @@ function Mainpage() {
 
             </div>
             <div className="shadow" style={{position:"absolute", bottom:"30px", left:"30px", zIndex:"100"}}>
-            <a  className="admin_icon" href="/admin/" style={{color:"#1f1f1f", fontSize:"30px"}}><i class="fas fa-user-shield"></i></a>
+            <a  className="admin_icon" href="/admin/" style={{color:"#1f1f1f", fontSize:"30px"}}><i className="fas fa-user-shield"></i></a>
             </div>
 
         </>

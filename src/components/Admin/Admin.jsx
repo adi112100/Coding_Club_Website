@@ -54,7 +54,7 @@ function Admin() {
         Axios.post("https://o1codingclub.herokuapp.com/mail/", { HTML: htmlbody, key: key }).
             then((response) => {
 
-                fetchCallbacks({ ...callbacks, message: response.data, status: "DONE" })
+                fetchCallbacks({ ...callbacks, message: response.data, status: "SUCCESS" })
                
 
             }).
@@ -173,7 +173,7 @@ function Admin() {
                 <strong>{message.status}</strong> {message.message}
 
             </div>
-            <div className={`shadow sticky-top alert alert-${callbacks.status === 'VALID' || callbacks.status === 'DONE' ? 'success' : 'warning'}  fade show ${callbacks.status === 'none' ? 'condition1' : 'condition2'}`}
+            <div className={`shadow sticky-top alert alert-${callbacks.status === 'SUCCESS' || callbacks.status === 'DONE' ? 'success' : 'warning'}  fade show ${callbacks.status === 'none' ? 'condition1' : 'condition2'}`}
                 role="alert" style={{ borderRadius: "50px" }}>
                 <strong>{callbacks.status}</strong> {callbacks.message}
 
@@ -257,7 +257,7 @@ function Admin() {
                             </button>
                         </div>
                         <div className="modal-body">
-                            <div className={`shadow sticky-top alert alert-${callbacks.status === 'VALID' || callbacks.status === 'DONE' ? 'success' : 'warning'}  fade show ${callbacks.status === 'none' ? 'condition1' : 'condition2'}`}
+                            <div className={`shadow sticky-top alert alert-${callbacks.status === 'SUCCESS' ? 'success' : 'warning'}  fade show ${callbacks.status === 'SUCCESS' ? 'condition2' : 'condition1'}`}
                                 role="alert" style={{ borderRadius: "50px" }}>
                                 <strong>{callbacks.status}</strong> {callbacks.message}
 
