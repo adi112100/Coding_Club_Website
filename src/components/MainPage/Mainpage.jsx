@@ -46,9 +46,10 @@ function Mainpage() {
                 <a href="" target="_blank" className="icon_a"><i className="fab fa-twitter"></i></a>
 
             </div>
-            <div className="shadow" style={{position:"absolute", bottom:"30px", left:"30px", zIndex:"100"}}>
-            <a  className="admin_icon" href="/admin/" style={{color:"#1f1f1f", fontSize:"30px"}}><i className="fas fa-user-shield"></i></a>
+            <div className="shadow" style={{ position: "absolute", bottom: "30px", left: "30px", zIndex: "100" }}>
+                <a className="admin_icon" href="/admin/" style={{ color: "#1f1f1f", fontSize: "30px" }}><i className="fas fa-user-shield"></i></a>
             </div>
+
 
         </>
     )

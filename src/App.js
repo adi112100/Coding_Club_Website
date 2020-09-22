@@ -9,6 +9,7 @@ import Mainpage from './components/MainPage/Mainpage';
 import Main_Swiper from './components/MainPage/Main_swiper';
 import GotoTop from './components/goUp/GotoTop';
 import Admin from './components/Admin/Admin';
+import Subscribe from './components/MainPage/Subscribe';
 
 function App() {
 
@@ -42,6 +43,12 @@ function App() {
             <br />
             <Placement_body />
             <GotoTop idd="placement_body" />
+          </Route>
+
+          <Route path="/subscribe">
+            <Navbar color="#242424" position="" />
+            <Subscribe />
+           
           </Route>
 
           <Route path="/info">

@@ -17,6 +17,7 @@ function Navbar(props) {
                         <a className="nav-item nav-link zoom" style={{color:props.color}} href="/blogs/"><i className="fas fa-blog"></i>  Blogs</a>
                         <a className="nav-item nav-link zoom" style={{color:props.color}} href="/placement/"><i className="fas fa-briefcase"></i>  Placement</a>
                         <a className="nav-item nav-link zoom" style={{color:props.color}} href="/contest/"><i className="fas fa-code"></i>  Online Contest</a>
+                        <a className="nav-item nav-link zoom" style={{color:props.color}} href="/subscribe/"><i className="fas fa-envelope"></i>  Subscribe</a>
                     </div>
                 </div>
             </nav>

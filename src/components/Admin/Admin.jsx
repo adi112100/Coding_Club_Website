@@ -363,8 +363,8 @@ function Admin() {
                                     />
                                 </div>
                                 <div className="form-group">
-                                    <label htmlFor="startime">End Time</label>
-                                    <input type="date" className="form-control" id="startime"
+                                    <label htmlFor="endtime">End Time</label>
+                                    <input type="date" className="form-control" id="endtime"
                                         value={contest.endTime}
                                         onChange={(e) => setContest({ ...contest, endTime: e.target.value })}
                                         

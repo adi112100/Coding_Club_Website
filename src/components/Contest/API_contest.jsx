@@ -37,6 +37,14 @@ export class APIcontest extends Component {
       )
   }
 
+  convertDatetime(date)
+  {
+    var d = new Date(date);
+    var n = d.toString();
+
+    return n;
+  }
+
   render() {
     const { error, isLoaded, items } = this.state;
 
@@ -53,9 +61,9 @@ export class APIcontest extends Component {
               <div className="card-body">
                 <h2 className="card-title">{item.name} by {item.platform}</h2>
                 <ul className="list-group list-group-flush">
-                  <li className="list-group-item">startTime - {item.startTime}</li>
-                  <li className="list-group-item">endTime - {item.endTime}</li>
-                  <li className="list-group-item">platform- {item.platform}</li>
+                  <li className="list-group-item"><strong>startTime -</strong> {this.convertDatetime(item.startTime)}</li>
+                  <li className="list-group-item"><strong>endTime -</strong> {this.convertDatetime(item.endTime)}</li>
+                  <li className="list-group-item"><strong>platform -</strong> {item.platform}</li>
                 </ul>
                 <a href={item.url} style={{ margin: "10px", textAlign: "center" }} className="btn btn-primary">Explore</a>
               </div>
