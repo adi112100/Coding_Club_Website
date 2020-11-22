@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import loading from '../../media/loading.gif'
 
+import { Markup } from 'interweave';
+
 export class APIblog extends Component {
   constructor(props) {
     super(props);
@@ -44,10 +46,15 @@ export class APIblog extends Component {
       var newscard = items.map(item => (
 
         <div className="card shadow-lg" key={item.title}>
+          {
+           item.body[0]!=='<'?
           <img src="https://source.unsplash.com/1600x900/?coding,black" className="card-img-top" alt=""></img>
-          <div className="card-body">
+          :
+          <div/>
+          }
+          <div className="card-body markdown">
             <h1 className="card-title">{item.title}</h1>
-            <p className="card-text" style={{ fontSize: 20 }}>{item.body}</p>
+            <Markup content={item.body} />
             <ul className="list-group list-group-flush">
               <li className="list-group-item">Author - {item.author}</li>
               <li className="list-group-item">Email - {item.email}</li>

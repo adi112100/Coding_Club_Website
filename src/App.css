@@ -260,6 +260,10 @@ body
     border-radius: 50px;
   }
 
+  .markdown img{
+    width: 100%;
+  }
+
 
   
 
